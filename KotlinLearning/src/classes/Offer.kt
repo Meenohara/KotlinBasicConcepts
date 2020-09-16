@@ -3,7 +3,9 @@ package classes
 class Offer(var companyName:String, var offerinLPA:Float=25.0f) {
 
     companion object
-    {
+    {//can be named and when accesssing, in place of Companion the name can be used
+        //Singleton Scoped
+
         //todo use an array with different company names and offer vaules and pass
         //todo 2 separate arrays for company names and offers?
         //val companies : Array<String> =["Thorn", ]//todo invesigate initialization

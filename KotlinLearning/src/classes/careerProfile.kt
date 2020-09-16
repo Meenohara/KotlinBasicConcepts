@@ -17,7 +17,9 @@ class careerProfile constructor(var firstName :String , var lastName :String, va
     val primConsString = "From Primary Constructor".also(::println)
 
 
-    //modifiers allowed = protected and internal
+
+//modifiers allowed = protected and internal
+    //internal for same module
     constructor(firstName :String, lastName :String): this(firstName, lastName, 7.8f)
     {
         println("$firstName $lastName's total experience is $totalExp")

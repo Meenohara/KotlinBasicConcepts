@@ -19,6 +19,7 @@ val myDouble: Double = 64.00 //64-bit floating point number
 
     println("age.toLong()::class is "+age.toLong()::class)
     println("age.toDouble()::class is "+age.toDouble()::class)
+    println("What class does phonenumber belong to: "+phonenumber::class)
 
     val bigLong: Long = 1_000_000_000 //underscores only for readability
     println(bigLong)
@@ -96,7 +97,7 @@ val myDouble: Double = 64.00 //64-bit floating point number
     val len7:Int = canNull?.length?:0 //because null is checked for using elvis operator?:
     val len8:Int = canNull?.substring(0,3)?.length?:0//? must be applied to substring too and any method that gets added in this line
     canNull?.drop(2);//gave error when canNull = null
-
+    //TODO Investigate ?. ?:
 
     var myage: Int? =40
     myage = null
@@ -158,6 +159,10 @@ val myDouble: Double = 64.00 //64-bit floating point number
         "Car maintenance and fuel charges",
         "Luxurious Car",
         "Condominium"
+    )
+//unable to do same with varargs
+    ctc(
+            perks="World Travel"
     )
 
     println(returnEncouragement())
@@ -229,3 +234,9 @@ fun ctc(empName:String= "Meena Murthy", perks: String="Medical Insurance")
     //function ctc overloaded to accommodate default perk value
     println("$empName's gorgeous perks are: $perks")
 }
+
+//Kotlin is statically typed
+//A language is statically-typed if the type of a variable is known at compile-time instead of at run-time.
+//but the types can be omitted therefore concise similar to dynamically typed languages
+//safe with compiler errors
+//Both FP and OOP

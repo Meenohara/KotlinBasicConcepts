@@ -1,5 +1,7 @@
 package classes
 
+//classes are final by default
+//open must be used if they need to be inherited
 fun main()
 {
   println("\n")
@@ -9,9 +11,12 @@ fun main()
   println("\n")
   var someBody = careerProfile("Somebody")
   println("\n")
+  println("What class does totalExperience belong to: "+someBody.totalExp::class)
+  println("\n")
   var meeMyself = myFacets("Software Developer")
   println(meeMyself.meMyself)
   println("\n\n")
+
 
   var meeMyslf = myFacets("Mee")//Noo value passed for meMysrlf
   println(meeMyslf.meMyself)
@@ -23,5 +28,7 @@ fun main()
 
   val multipleOffers = Offer.otherOffers(4)
   println(multipleOffers);
+
+  val offerObj = Offer.Companion;
 }
 
