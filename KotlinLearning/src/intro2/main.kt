@@ -14,12 +14,27 @@ val yearofgraduation : Int = 2002 // 32-bit signed integer
 val phonenumber : Long = 9999999444 // 64-bit signed integer
 val height: Float = 5.3f //32-bit floating point number
 val myDouble: Double = 64.00 //64-bit floating point number
+
 // all of the above extend Number() class
 //therefore the above are objects
 
     println("age.toLong()::class is "+age.toLong()::class)
     println("age.toDouble()::class is "+age.toDouble()::class)
     println("What class does phonenumber belong to: "+phonenumber::class)
+
+    //In Kotlin you can write Object::class, which will give you a KClass.
+    // KClass is not equivalent to the class Class that we know from Java.
+    // If you want to get the Java Class class you can write
+    // Object::class.java - i.e.: println("string"::class.java)
+
+    //:: in Kotlin is about meta-programming, including method references, property references and class literals
+    //TODO know about metaprogramming
+
+    //Making use of the :: operator, you retrieve additional information,
+    // including things such as method references, property references and class literals.
+
+    //Also in java, .class is not a method or a member
+    // it is a special directive for the compiler to access the class
 
     val bigLong: Long = 1_000_000_000 //underscores only for readability
     println(bigLong)
@@ -63,6 +78,15 @@ val myDouble: Double = 64.00 //64-bit floating point number
     """.trimMargin()
     println(rhyme)
     println("Nursery Rhyme $rhyme \n $message")
+//Same as ("Nursery Rhyme"+rhyme+"\n "+message)
+
+    val hbd: String = """
+        Happy Birthday to you
+        Happy Birthday to you
+        Happy Birthday Dear
+    """.replaceIndent("♪♫...§")
+    println(hbd)
+    println("Length of hbd is ${hbd.length}")
 
     val p1 = 7;
     var p2 = 11;
@@ -74,8 +98,8 @@ val myDouble: Double = 64.00 //64-bit floating point number
     println(p1===p2)//Referential equality
     //Both are same at run time for numbers, chars and boolean
 
-    var g = Company("Google")
-    var f = Company("Google")
+    var g = Company("TurboTop")
+    var f = Company("BestWorks")
 //Referential equality more relevant with Objects
     println(g!==f)
     println(g===f)
@@ -117,6 +141,10 @@ val myDouble: Double = 64.00 //64-bit floating point number
     println(p)
    var q = returnDefault()
     println(q)
+
+   // returnNothing() //returns exception as coded for in the method
+
+    //var nothing = returnNothingatAll() // class kotlin.Unit cannot be cast to class java.lang.Void
 
     nestedFunction()
     singleLine()
@@ -178,6 +206,29 @@ fun comeBack()
 fun returnUnit() :Unit
 {
     println("By default Unit is the return type")
+}
+
+fun returnNothing() :Nothing
+{
+    // if Nothing is not specified here Unit type will be returned
+    throw Exception("Nothing to return")
+}
+
+fun returnNothingatAll() :Nothing
+{
+    // if Nothing is not specified here Unit type will be returned
+    var unity = print("This method does not means nothing at all")
+    var naught = unity as Nothing
+    return naught
+}
+
+fun returnVoid(): Void
+{
+    //Useful when using Java libraries that return Void, retailed for interoperabilty
+    //cast as void?
+    var unity = print("This method does not mean anything")
+    var voidT = unity as Void
+    return voidT
 }
 
 fun returnDefault()

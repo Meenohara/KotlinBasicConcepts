@@ -4,7 +4,7 @@ fun main()
 {
     fun process(input: Any)
     {
-        when(input)//when is a class?
+        when(input)
         {
             1 -> println("One!")
             2 -> println("Two!")

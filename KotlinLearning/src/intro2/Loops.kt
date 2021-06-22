@@ -14,7 +14,7 @@ fun main()
     var i=0
     do println("Hi") while (i++<=10)
 
-    val perks = listOf("great salary", 26.0f, "Google")
+    val perks = listOf("great salary", 26.0f, "Zenith")
     for(s in perks)
     {
         print(s)
@@ -39,6 +39,8 @@ fun main()
     //if (designation.contains(element)){}
 
     println()
+//    print("with step i")
+//    for(i in 9 downTo 1 step i.times(2))
     for(i in 9 downTo 1 step 2)
     {
         print(i)
@@ -83,4 +85,15 @@ fun main()
     //"a".compareTo("ball")<=0 && "ball".compareTo("k") <=0
     //Strings are compared lexicographically
 
+    val daysOfWeek = listOf("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday")
+    for(eachday in daysOfWeek.withIndex())
+    {
+       // eachday="Today"//to demonstrate that parameters always val by default
+         println(eachday)
+    }
+    //Destructuring or Desconstructing
+    for((i,eachday) in daysOfWeek.withIndex())
+    {
+        println("$i\t$eachday")
+    }
 }

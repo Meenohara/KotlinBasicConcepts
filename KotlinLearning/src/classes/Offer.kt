@@ -8,7 +8,7 @@ class Offer(var companyName:String, var offerinLPA:Float=25.0f) {
 
         //todo use an array with different company names and offer vaules and pass
         //todo 2 separate arrays for company names and offers?
-        //val companies : Array<String> =["Thorn", ]//todo invesigate initialization
+       val companies : Array<String> =arrayOf("Hello", "World")//todo invesigate initialization
         // is there a key value pair variable? Map?
         //todo introduce a map here and iterate it to display other offers
         val offers = mutableListOf<Offer>()
@@ -24,7 +24,7 @@ class Offer(var companyName:String, var offerinLPA:Float=25.0f) {
 
         fun createOffer(companyName:String, offerinLPA:Float): Offer
         {
-            return Offer(companyName = "Google", offerinLPA = 25.0f)
+            return Offer(companyName = "UltraTop", offerinLPA = 25.0f)
         }
     }
         fun compOffer():String = "$companyName - $offerinLPA"

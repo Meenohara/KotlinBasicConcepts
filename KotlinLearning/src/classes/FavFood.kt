@@ -15,7 +15,7 @@ class FavFood{
 fun main()
 {
     println(FavFood.name)
-    FavFood.name= "Chitranna"
+    FavFood.name= "Idli"
     println(FavFood.name)
     doStuff()
     println(FavFood.name)

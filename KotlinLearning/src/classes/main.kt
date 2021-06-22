@@ -23,7 +23,7 @@ fun main()
   meeMyself.getNewSkills()
   println(meeMyself.getNewSkills())
 
-  val offer = Offer.createOffer(  "Google", 25.0f)
+  val offer = Offer.createOffer(  "Top1Company", 25.0f)
   println(offer);
 
   val multipleOffers = Offer.otherOffers(4)
